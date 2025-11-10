@@ -38,7 +38,7 @@
             <div class="relative z-10 text-center px-4">
                 <h2 class="text-4xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-lg">Explore as melhores rotas de natação do Brasil.</h2>
                 <p class="text-lg md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md">Aventuras seguras, guiadas e inesquecíveis para todos os níveis!</p>
-                <a href="#cta" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
+                <a href="#" class="open-modal-btn bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
                     Reserve sua vaga
                 </a>
             </div>
@@ -215,7 +215,7 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-5xl font-bold mb-6">Desperte seu espírito explorador!</h2>
                 <p class="text-xl mb-8">Venha nadar conosco e criar memórias que durarão para sempre.</p>
-                <a href="#footer" class="bg-white hover:bg-slate-100 text-blue-600 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
+                <a href="#" class="open-modal-btn bg-white hover:bg-slate-100 text-blue-600 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
                     Solicite mais informações
                 </a>
             </div>
@@ -228,8 +228,8 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                 <div>
                     <h3 class="text-lg font-semibold text-white mb-4">Contato</h3>
-                    <p>Telefone: (21) 99999-8888</p>
-                    <p>WhatsApp: (21) 99999-8888</p>
+                    <p>Telefone: (19) 99156-9018</p>
+                    <p>WhatsApp: (19) 99156-9018</p>
                     <p>contato@natacaobrasil.com</p>
                 </div>
                 <div>
@@ -242,9 +242,19 @@
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold text-white mb-4">Parceiros e Selos</h3>
-                    <div class="flex items-center justify-center md:justify-start space-x-4 opacity-70">
-                        <span>Selo Sustentável</span>
-                        <span>Brasil EcoTour</span>
+                    <div class="flex items-center justify-center md:justify-start space-x-6 opacity-80">
+                         <div class="flex items-center space-x-2">
+                            <svg class="h-8 w-8 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                            </svg>
+                            <span>Selo Sustentável</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="h-8 w-8 text-cyan-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                            </svg>
+                            <span>Selo Ecotur</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -254,11 +264,53 @@
         </div>
     </footer>
 
-    <!-- JavaScript for scroll animations -->
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4 hidden z-[100]" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div id="modal-content" class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md relative transform transition-all opacity-0 -translate-y-10">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 transition-colors" aria-label="Fechar modal">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <div id="form-container">
+                <h3 id="modal-title" class="text-2xl font-bold text-slate-800 mb-2 text-center">Reserve sua Aventura</h3>
+                <p class="text-slate-500 text-center mb-6">Preencha os dados abaixo e entraremos em contato.</p>
+                <form id="booking-form" class="space-y-4" action="https://formsubmit.co/jaime.fernandez@bablepet.com.br" method="POST">
+                     <!-- FormSubmit Settings -->
+                    <input type="hidden" name="_subject" value="Novo Contato - Férias de Natação no Brasil!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Nome Completo</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-shadow" placeholder="Seu nome">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Telefone / WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-shadow" placeholder="(00) 00000-0000">
+                    </div>
+                    <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-md text-lg transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+
+            <div id="success-message" class="hidden text-center py-8">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">Obrigado!</h3>
+                <p class="text-slate-600">Recebemos seus dados. Em breve, nossa equipe entrará em contato.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Scroll animations
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
-
             if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -268,20 +320,109 @@
                             observer.unobserve(entry.target);
                         }
                     });
-                }, {
-                    threshold: 0.1
-                });
-
-                animatedElements.forEach(el => {
-                    observer.observe(el);
-                });
+                }, { threshold: 0.1 });
+                animatedElements.forEach(el => observer.observe(el));
             } else {
-                // Fallback for older browsers
                 animatedElements.forEach(el => {
                     el.classList.add('opacity-100', 'translate-y-0');
                     el.classList.remove('opacity-0', 'translate-y-10');
                 });
             }
+
+            // Modal Logic
+            const modal = document.getElementById('booking-modal');
+            const modalContent = document.getElementById('modal-content');
+            const openModalBtns = document.querySelectorAll('.open-modal-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const bookingForm = document.getElementById('booking-form');
+            const formContainer = document.getElementById('form-container');
+            const successMessage = document.getElementById('success-message');
+
+            const openModal = () => {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modalContent.classList.add('opacity-100', 'translate-y-0');
+                    modalContent.classList.remove('opacity-0', '-translate-y-10');
+                }, 10);
+            };
+
+            const closeModal = () => {
+                modalContent.classList.remove('opacity-100', 'translate-y-0');
+                modalContent.classList.add('opacity-0', '-translate-y-10');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    // Reset form for next time
+                    formContainer.classList.remove('hidden');
+                    successMessage.classList.add('hidden');
+                    bookingForm.reset();
+                    const submitButton = bookingForm.querySelector('button[type="submit"]');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Enviar';
+                }, 300);
+            };
+
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal();
+                });
+            });
+
+            closeModalBtn.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const form = e.target;
+                const formData = new FormData(form);
+                const submitButton = form.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.textContent;
+
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
+
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        formContainer.classList.add('hidden');
+                        successMessage.classList.remove('hidden');
+                        setTimeout(closeModal, 4000);
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                alert(data["errors"].map(error => error["message"]).join(", "));
+                            } else {
+                                throw new Error('Network response was not ok.');
+                            }
+                        }).catch(() => {
+                            alert('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.');
+                        });
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalButtonText;
+                    }
+                }).catch(error => {
+                    console.error('Submission error:', error);
+                    alert('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.');
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                });
+            });
         });
     </script>
 </body>
